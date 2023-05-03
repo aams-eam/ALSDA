@@ -1,4 +1,4 @@
-# YANG-NAS
+# Measuring Latency of the Semantic Data Aggregator
 
 This repository contains part of the code developed during the master's Thesis **System for Netflow traffic enhancement in aim of cryptojacking detection**, the separation of this repository is as follows:
 

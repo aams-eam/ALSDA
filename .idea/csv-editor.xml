@@ -24,146 +24,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.016_1.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.016_2.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.016_3.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.025_1.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.025_2.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.025_3.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.05_1.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.05_2.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.05_3.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.1_1.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.1_2.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.1_3.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.2_1.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.2_2.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\latency0.2_3.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\processed_averaged\latency0.016.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\processed_averaged\latency0.025.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\processed_averaged\latency0.05.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\processed_averaged\latency0.1.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\tests\DATA\results_latency_nodriver\processed\processed_averaged\latency0.2.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\tests\controlled_DATA\latency-raw\consumerCDS-end.csv">
           <value>
             <Attribute>
@@ -182,6 +42,41 @@
           <value>
             <Attribute>
               <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\tests\controlled_DATA\multiple-rates-driversapps\results_inputdriver\processed\processed_averaged\latency0.016.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\tests\controlled_DATA\multiple-rates-driversapps\results_inputdriver\processed\processed_averaged\latency0.025.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\tests\controlled_DATA\multiple-rates-driversapps\results_inputdriver\processed\processed_averaged\latency0.05.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\tests\controlled_DATA\multiple-rates-driversapps\results_inputdriver\processed\processed_averaged\latency0.1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\tests\controlled_DATA\multiple-rates-driversapps\results_inputdriver\processed\processed_averaged\latency0.2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>

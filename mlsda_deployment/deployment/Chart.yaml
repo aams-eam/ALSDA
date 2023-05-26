@@ -1,0 +1,9 @@
+apiVersion: v2
+name: flinklatency-reading-writing
+description: A Helm chart to deploy a the event-generator and two applications to measure the the latency in reading and writing from topics
+type: application
+version: 3.3-SNAPSHOT
+appVersion: 1.16.0
+maintainers:
+  - name: Alejandro A. Moreno Sancho
+    email: aams.eam@gmail.com

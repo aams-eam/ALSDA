@@ -14,5 +14,6 @@ This repository contains part of the code developed during the master's Thesis *
    - `controlled_DATA`. Contains the data obtained when performed latency measures with controlled rate.
    - `DATA`. Contains the data obtained when performed latency measures WITHOUT controlled rate, also for the measures of CPU and MEMORY.
    - `CODE`. Contains the script to correlate latency events obtained from `FlinkLatencyA` and `FlinkLatencyB`, parsing prometheus JSON, creating graphs and more.
+- `mlsda_deployment`. Contains a script that automates the deployment and measurement of latency for an application.
 
 

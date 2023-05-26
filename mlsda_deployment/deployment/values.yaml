@@ -1,0 +1,81 @@
+eventGenerator:
+  name: event-generator
+  repository: k8sregistry:5000/event-generator:6.0
+  port: 8088
+  kafka: kafka-service:9092
+  topic: topicA
+  filepath: /app/pipeline-flows/netflow-aggregated.txt
+  delay: 0.8
+
+flinklatencyanano:
+  name: flinklatency-rw-a
+  repository: k8sregistry:5000/flinklatencyanano:1.0
+  kafka: "kafka-service:9092"
+  topicRead1: "topicA"
+  topicWrite1: "topicB"
+  sideTopic: "topicStart"
+  topicRead2: "topicD"
+  topicWrite2: "topicEnd"
+  jarFile: /opt/flink/usrlib/FlinkLatencyANano-1.0.jar
+  classMain: tid.FlinkLatencyANano
+
+inputdriver:
+  name: input-driver
+  repository: k8sregistry:5000/netflowinputdriver:1.0
+  kafka: "kafka-service:9092"
+  topicRead: "topicB"
+  topicWrite: "topicC"
+  jarFile: /opt/flink/usrlib/netflow-driver-1.0.jar
+  classMain: tid.NetflowDriver
+
+netflow2bidi:
+  name: netflow2bidi
+  repository: k8sregistry:5000/netflow2bidi:1.0
+  kafka: "kafka-service:9092"
+  topicRead: "topicB"
+  topicWrite: "topicC"
+  jarFile: /opt/flink/usrlib/Netflow2Bidirectional-1.0.jar
+  classMain: tid.Netflow2Bidirectional
+
+netflowagg:
+  name: netflowagg
+  repository: k8sregistry:5000/netflowagg:1.0
+  kafka: "kafka-service:9092"
+  topicRead: "topicB"
+  topicWrite: "topicC"
+  jarFile: /opt/flink/usrlib/netflowAggregator-1.0.jar
+  classMain: tid.NetflowAggregator
+
+outputdriver:
+  name: output-driver
+  repository: k8sregistry:5000/netflowoutputdriver:1.0
+  kafka: "kafka-service:9092"
+  topicRead: "topicB"
+  topicWrite: "topicC"
+  jarFile: /opt/flink/usrlib/netflow2csv-1.0.jar
+  classMain: tid.Netflow2Csv
+
+flinklatencybnano:
+  name: flinklatency-rw-b
+  repository: k8sregistry:5000/flinklatencybnano:1.0
+  kafka: "kafka-service:9092"
+  topicRead: "topicC"
+  topicWrite: "topicD"
+  jarFile: /opt/flink/usrlib/FlinkLatencyBNano-1.0.jar
+  classMain: tid.FlinkLatencyBNano
+
+driverApp:
+  name: driverapptesting
+  repository: k8sregistry:5000/driverapptesting:1.0
+  kafka: "kafka-service:9092"
+  topicRead: "topicB"
+  topicWrite: "topicC"
+  # Do not change jarFile and classMain values for mlsda.sh to work correctly
+  #    - jarFile: /opt/flink/usrlib/driverapptesting-1.0.jar
+  #    - classMain: tid.NetflowAggregator
+  jarFile: /opt/flink/usrlib/driverapptesting-1.0.jar
+  classMain: tid.NetflowAggregator
+
+flinkConf:
+  memory: "2042Mi"
+  cpu: "500m"

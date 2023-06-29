@@ -66,71 +66,71 @@ flb_name=$(awk '/flinklatencybnano/{flag=1} flag && /name:/{print $NF;flag=""}' 
 driver_app_reg=$(awk '/driverApp/{flag=1} flag && /repository:/{print $NF;flag=""}'  ./deployment/values.yaml | head -1)
 driver_app_name=$(awk '/driverApp/{flag=1} flag && /name:/{print $NF;flag=""}'  ./deployment/values.yaml | head -1)
 
-# assert_docker_push () {
-#         echo $push_output
-#         if [[ ! $push_output =~ "digest: sha256:" ]]
-#         then
-#                 echo "One of the images could not be pushed!"
-#                 exit
-#         fi
-# }
-# 
-# # Build and push FlinkLatency apps
-# # FLINKLATENCY(A)
-# echo "Building flinklatencyanano (A)"
-# docker build -t $fla_reg ./builds/FlinkLatencyANano
-# echo "Pushing flinklatencyanano (A) into the registry"
-# push_output=$(docker push $fla_reg)
-# echo $push_output
-# assert_docker_push
-# 
-# # FLINKLATENCY(B)
-# echo "Building flinklatencybnano (B)"
-# docker build -t $flb_reg ./builds/FlinkLatencyBNano
-# echo "Pushing flinklatencybnano (B) into the registry"
-# push_output=$(docker push $flb_reg)
-# echo $push_output
-# assert_docker_push
-# 
-# # EVENT-GENERATOR
-# # Copy eventsfile into event-generator
-# cp $eventsfile ./builds/event-generator/pipeline-flows
-# 
-# # Build and push event-generator with eventsfile
-# echo "Building event generator"
-# docker build -t $evgen_reg ./builds/event-generator
-# echo "Pushing event-generator into the registry"
-# push_output=$(docker push $evgen_reg)
-# echo $push_output
-# # Delete eventfile from the event-generator folder
-# rm ./builds/event-generator/pipeline-flows/$eventsfile
-# assert_docker_push
-# 
-# # ToDo: Build and Push the application with the jar file
-# # DRIVER/APP
-# mkdir ./builds/driver-app
-# cp $jarfile ./builds/driver-app/driverapptesting-1.0.jar
-# touch ./builds/driver-app/Dockerfile
-# 
-# echo "FROM flink:1.14.4-scala_2.12-java11" > ./builds/driver-app/Dockerfile
-# echo "ADD driverapptesting-1.0.jar /opt/flink/usrlib/" >> ./builds/driver-app/Dockerfile
-# 
-# # change the main name in the values.yaml file
-# 
+assert_docker_push () {
+        echo $push_output
+        if [[ ! $push_output =~ "digest: sha256:" ]]
+        then
+                echo "One of the images could not be pushed!"
+                exit
+        fi
+}
+
+# Build and push FlinkLatency apps
+# FLINKLATENCY(A)
+echo "Building flinklatencyanano (A)"
+docker build -t $fla_reg ./builds/FlinkLatencyANano
+echo "Pushing flinklatencyanano (A) into the registry"
+push_output=$(docker push $fla_reg)
+echo $push_output
+assert_docker_push
+
+# FLINKLATENCY(B)
+echo "Building flinklatencybnano (B)"
+docker build -t $flb_reg ./builds/FlinkLatencyBNano
+echo "Pushing flinklatencybnano (B) into the registry"
+push_output=$(docker push $flb_reg)
+echo $push_output
+assert_docker_push
+
+# EVENT-GENERATOR
+# Copy eventsfile into event-generator
+cp $eventsfile ./builds/event-generator/pipeline-flows
+
+# Build and push event-generator with eventsfile
+echo "Building event generator"
+docker build -t $evgen_reg ./builds/event-generator
+echo "Pushing event-generator into the registry"
+push_output=$(docker push $evgen_reg)
+echo $push_output
+# Delete eventfile from the event-generator folder
+rm ./builds/event-generator/pipeline-flows/$eventsfile
+assert_docker_push
+
+# ToDo: Build and Push the application with the jar file
+# DRIVER/APP
+mkdir ./builds/driver-app
+cp $jarfile ./builds/driver-app/driverapptesting-1.0.jar
+touch ./builds/driver-app/Dockerfile
+
+echo "FROM flink:1.14.4-scala_2.12-java11" > ./builds/driver-app/Dockerfile
+echo "ADD driverapptesting-1.0.jar /opt/flink/usrlib/" >> ./builds/driver-app/Dockerfile
+
+# change the main name in the values.yaml file
+
 sed -i 's/classMain: tid.NetflowAggregator/classMain: ${classmain}/' ./deployment/values.yaml
-# 
-# echo "Building driver/app image"
-# docker build -t $driver_app_reg ./builds/driver-app
-# echo "Pushing event-generator into the registry"
-# push_output=$(docker push $driver_app_reg)
-# echo $push_output
-# assert_docker_push
-# 
-# # Delete temporary driver-app directory
-# rm -r ./builds/driver-app
-# 
-# 
-# sleep 6s
+
+echo "Building driver/app image"
+docker build -t $driver_app_reg ./builds/driver-app
+echo "Pushing event-generator into the registry"
+push_output=$(docker push $driver_app_reg)
+echo $push_output
+assert_docker_push
+
+# Delete temporary driver-app directory
+rm -r ./builds/driver-app
+
+
+sleep 6s
 
 
 # # DEPLOY EVERYTHING
